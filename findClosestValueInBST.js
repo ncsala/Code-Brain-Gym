@@ -1,7 +1,8 @@
-const { BST } = require('./BST.js');
+const { BST } = require('./BSTConstruction');
+
 // Recursive Solution
-// Average: O(log(n) time | o(log(n) space))
-// Worst: 0(n) time | O(n) space
+// Average => TIME = O(log(n)) | SPACE = O(log(n))
+// Worst => TIME = O(n) | SPACE = O(n)
 function findClosestValueInBst(tree, target, closest = Infinity) {
 	if (tree === null) {
 		return closest;
@@ -40,17 +41,17 @@ function findClosestValueInBstIterative(tree, target, closest = Infinity) {
 }
 
 // Creación del árbol
-const root = new BST(10);
-root.insert(5);
-root.insert(15);
-root.insert(2);
-root.insert(5);
-root.insert(13);
-root.insert(22);
-root.insert(1);
-root.insert(14);
+const root = new BST(10)
+  .insert(5)
+  .insert(15)
+  .insert(2)
+  .insert(5)
+  .insert(13)
+  .insert(22)
+  .insert(1)
+  .insert(14);
+
 console.log(root);
-root.printTree();
 
 const closestValue = findClosestValueInBstIterative(root, 22);
 console.log('El valor más cercano a 22 en el árbol es:', closestValue);
